@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>squarePlay</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        h1 {
+            margin: auto;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+        .content {
+            margin: auto;
+            max-width: 800px;
+        }
+        .pBox {
+            width: 48px;
+            height: 48px;
+            margin: 2px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h1>squarePlay</h1>
+        <div class="div-output"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // make all the pretty squares
+            let numSquares = 150;
+            for (let i = 0; i < numSquares; i++) {
+                let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $(".div-output").append("<div class='pBox' style='background-color:#" + randomColor + ";'></div>");
+            }
+
+            $(document).on("click", ".pBox", function (event) {
+                let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                console.log(this);
+                $(this).css("background-color", "#" + randomColor);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
