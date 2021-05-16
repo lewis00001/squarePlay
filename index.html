@@ -10,12 +10,16 @@
         * {
             box-sizing: border-box;
         }
+        html {
+            background-color: #000;
+        }
         h1 {
             margin: auto;
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
             margin-bottom: 40px;
             margin-top: 20px;
+            color: white;
         }
         .content {
             margin: auto;
@@ -45,8 +49,8 @@
             // make all the pretty squares
             let numSquares = 150;
             for (let i = 0; i < numSquares; i++) {
-                let randomColor = Math.floor(Math.random()*16777215).toString(16);
-                $(".div-output").append("<div class='pBox' style='background-color:#" + randomColor + ";'></div>");
+                // let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                $(".div-output").append("<div class='pBox' style='background-color:#" + "4285B5" + ";'></div>");
             }
 
             $(document).on("click", ".pBox", function (event) {
